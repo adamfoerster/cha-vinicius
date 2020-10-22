@@ -14,8 +14,27 @@
       rel="stylesheet"
     />
     <script defer src="/build/bundle.js"></script>
-    <script src="//tag.goadopt.io/injector.js?website_code=69447d7f-0934-4903-8135-53fcb1809619" class="adopt-injector">
-  </script>
+    <script
+      src="//tag.goadopt.io/injector.js?website_code=69447d7f-0934-4903-8135-53fcb1809619"
+      class="adopt-injector"
+    ></script>
+    <script>
+      function listenForAdoptConsent() {
+        document.querySelector(".hkn-disclaimer-bar").addEventListener("bar-closed", function () {
+          adoptBar.hideButton();
+        });
+        var adoptcookie = localStorage.getItem("AdoptId");
+        if (adoptcookie && adoptBar) {
+          adoptBar.hideButton();
+        }
+      }
+      var waitForAdoption = setInterval(function () {
+        if (!!document.querySelector(".hkn-disclaimer-bar")) {
+          listenForAdoptConsent();
+          clearInterval(waitForAdoption);
+        }
+      }, 100);
+    </script>
   </head>
 
   <body></body>
