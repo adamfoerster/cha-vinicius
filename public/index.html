@@ -24,7 +24,7 @@
           adoptBar.hideButton();
         });
         var adoptcookie = localStorage.getItem("AdoptId");
-        if (adoptcookie && adoptBar) {
+        if (adoptcookie && !!window.adoptBar) {
           adoptBar.hideButton();
         }
       }
