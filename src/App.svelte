@@ -159,3 +159,4 @@
   Em caso de dúvidas pode entrar em contato com a mamãe Rebecca via Whatsapp
   41-99636-5561.
 </main>
+<button id="adopt-hide-after-consent" onclick="adoptBar.open()">Mostrar Aviso</button>
